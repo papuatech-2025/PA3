@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:#f5f7fb;
+}
+
+/* HEADER */
+.dashboard-title{
+    color:#0d1f35;
+    font-weight:700;
+    font-size:1.6rem;
+    letter-spacing:-0.5px;
+}
+
+.dashboard-title i{
+    color:#F5A623;
+}
+
+.dashboard-breadcrumb{
+    background:transparent;
+    padding:0;
+}
+
+.dashboard-breadcrumb a{
+    color:#F5A623;
+    text-decoration:none;
+    font-size:0.85rem;
+}
+
+.dashboard-breadcrumb .active{
+    color:#8a9ab0;
+    font-size:0.85rem;
+}
+
+.dashboard-date{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    background:white;
+    padding:12px 20px;
+
+    border-radius:14px;
+    border:1px solid #e4eaf2;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.04);
+}
+
+.dashboard-date i{
+    color:#F5A623;
+}
+
+/* STAT CARD */
+.stat-card{
+    border-radius:18px;
+    padding:1.5rem;
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+
+    height:100%;
+
+    box-shadow:0 10px 30px rgba(13,31,53,0.18);
+    transition:0.3s ease;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+}
+
+.stat-card::after{
+    content:'';
+    position:absolute;
+
+    bottom:-25px;
+    right:-25px;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+    background:rgba(255,255,255,0.05);
+}
+
+.stat-primary{
+    background:linear-gradient(135deg,#1a2e4a 0%,#0d1f35 100%);
+}
+
+.stat-danger{
+    background:linear-gradient(135deg,#7B2D00 0%,#5C1A00 100%);
+}
+
+/* CONTENT */
+.stat-label{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:700;
+    color:rgba(255,255,255,0.65);
+    margin-bottom:8px;
+}
+
+.stat-number{
+    font-size:2.3rem;
+    font-weight:800;
+    color:#FFD080;
+    line-height:1;
+    margin-bottom:10px;
+}
+
+.stat-badge{
+    display:inline-block;
+
+    padding:6px 10px;
+
+    background:rgba(255,255,255,0.12);
+    border-radius:8px;
+
+    font-size:0.72rem;
+    color:rgba(255,255,255,0.8);
+}
+
+/* ICON */
+.stat-icon-box{
+    width:58px;
+    height:58px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,0.12);
+
+    flex-shrink:0;
+}
+
+.stat-icon-box i{
+    font-size:1.8rem;
+    color:#F5A623;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .dashboard-title{
+        font-size:1.3rem;
+    }
+
+    .stat-card{
+        padding:1.2rem;
+    }
+
+    .stat-number{
+        font-size:2rem;
+    }
+}

@@ -1,0 +1,91 @@
+
+    .hover-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.15)!important;
+    }
+    .card {
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .badge {
+        padding: 6px 12px;
+        pointer-events: none; /* Badge tidak bisa diklik sendiri */
+    }
+    .section {
+        padding: 60px 0;
+    }
+    .section-title {
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .section-title h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1a2744;
+        position: relative;
+        padding-bottom: 20px;
+    }
+    .section-title h2:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #d97706;
+        bottom: 0;
+        left: calc(50% - 30px);
+    }
+    .section-title p {
+        margin-top: 20px;
+        color: #666;
+    }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        pointer-events: none; /* Gambar tidak bisa diklik sendiri */
+    }
+    .card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    .badge-publish {
+        background: #16a34a;
+        color: white;
+    }
+    .badge-draft {
+        background: #d97706;
+        color: white;
+    }
+    /* Membuat seluruh card menjadi link */
+    .clickable-card {
+        position: relative;
+    }
+    .clickable-card a.stretched-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+    /* Efek hover pada teks */
+    .card:hover .card-title {
+        color: #1a2744;
+        text-decoration: underline;
+    }
+    .card-title {
+        transition: color 0.2s ease;
+        position: relative;
+        z-index: 5;
+    }
+    .card-text, .mb-3, .d-flex {
+        position: relative;
+        z-index: 5;
+    }

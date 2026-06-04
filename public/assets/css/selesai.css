@@ -1,0 +1,29 @@
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #1a2e4a, #0d1f35);
+    border: none;
+    transition: all 0.3s;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, #F5A623, #e09612);
+    transform: translateY(-2px);
+}
+.btn-outline-primary {
+    border: 1px solid #1a2e4a;
+    color: #1a2e4a;
+}
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, #1a2e4a, #0d1f35);
+    border-color: transparent;
+    color: white;
+}
+code {
+    background: #f8f9fa;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}

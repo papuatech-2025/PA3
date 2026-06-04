@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary: #1e3a8a;
+    --primary-light: #2563eb;
+    --primary-dark: #172554;
+
+    --accent: #fbbf24;
+
+    --white: #ffffff;
+    --bg-light: #f8fafc;
+    --border: rgba(255,255,255,0.15);
+
+    --text-main: #e2e8f0;
+    --text-soft: rgba(255,255,255,0.72);
+}
+
+/* =========================
+   PAGE
+========================= */
+.program-detail-page {
+    background: var(--bg-light);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1e293b;
+    padding-bottom: 5rem;
+}
+
+/* =========================
+   TITLE
+========================= */
+.program-title {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--primary-dark);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================
+   META
+========================= */
+.program-meta-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.badge-category {
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meta-item-top {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.img-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.img-frame img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.card-content {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.content-label {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.description-text {
+    color: #475569;
+    line-height: 1.9;
+    font-size: 1.05rem;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar-sticky {
+    position: sticky;
+    top: 100px;
+}
+
+/* =========================
+   INFO CARD (BIRU)
+========================= */
+.info-card {
+    background:
+        radial-gradient(rgba(255,255,255,0.05) 2px, transparent 2px),
+        linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+
+    background-size: 28px 28px, cover;
+
+    border-radius: 30px;
+    padding: 2rem;
+    color: white;
+
+    box-shadow:
+        0 20px 40px rgba(37,99,235,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================
+   TITLE
+========================= */
+.info-title {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+/* =========================
+   INFO GROUP
+========================= */
+.info-group {
+    margin-bottom: 1.7rem;
+}
+
+.info-group label {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.55rem;
+    text-transform: uppercase;
+}
+
+.info-group p {
+    margin: 0;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+/* =========================
+   ICON
+========================= */
+.info-group i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+/* =========================
+   STATUS
+========================= */
+.status-pill {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+/* =========================
+   HR
+========================= */
+.info-card hr {
+    border-color: rgba(255,255,255,0.15);
+    margin: 2rem 0;
+}
+
+/* =========================
+   SMALL TEXT
+========================= */
+.info-card small {
+    display: block;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+    font-size: 0.92rem;
+}
+
+/* =========================
+   SHARE BUTTON
+========================= */
+.share-wrapper {
+    margin-top: 2rem;
+}
+
+.btn-share {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    color: var(--primary);
+
+    border: none;
+
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-share:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.btn-back-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.btn-back-custom:hover {
+    color: var(--primary-light);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+        border-radius: 24px;
+    }
+
+    .info-title {
+        font-size: 1.6rem;
+    }
+
+    .info-group p {
+        font-size: 1rem;
+    }
+}

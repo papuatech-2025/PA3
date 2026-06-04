@@ -1,0 +1,42 @@
+.layanan-card{
+    transition: all 0.35s ease;
+    background: #fff;
+}
+
+.layanan-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.10) !important;
+}
+
+.icon-link{
+    display: inline-block;
+}
+
+.icon-circle{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d6efd, #4dabf7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    transition: all 0.35s ease;
+    box-shadow: 0 10px 25px rgba(13,110,253,0.25);
+}
+
+.icon-circle:hover{
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 15px 35px rgba(13,110,253,0.35);
+}
+
+.layanan-card h4{
+    color: #1f2937;
+}
+
+.layanan-card p{
+    line-height: 1.8;
+    font-size: 15px;
+}
+
