@@ -1,23 +1,5 @@
 <header id="header" class="header sticky-top">
 
-<div class="topbar d-flex align-items-center dark-background">
-<div class="container d-flex justify-content-center justify-content-md-between">
-
-<div class="contact-info d-flex align-items-center">
-<i class="bi bi-envelope">
-<a href="mailto:contact@example.com">contact@example.com</a>
-</i>
-<i class="bi bi-phone ms-4">
-<span>+1 5589 55488 55</span>
-</i>
-</div>
-
-<div class="social-links d-none d-md-flex align-items-center">
-<a href="#"><i class="bi bi-twitter-x"></i></a>
-<a href="#"><i class="bi bi-facebook"></i></a>
-<a href="#"><i class="bi bi-instagram"></i></a>
-<a href="#"><i class="bi bi-linkedin"></i></a>
-</div>
 
 </div>
 </div>
@@ -33,7 +15,7 @@
 
 <nav id="navmenu" class="navmenu">
 <ul>
-    <li><a href="{{ route('branda') }}">Branda</a></li>
+    <li><a href="{{ route('branda') }}">Home</a></li>
 
     <!-- Dropdown Profile -->
     <li class="dropdown">
@@ -48,7 +30,7 @@
     <li><a href="{{ route('program.index') }}">Program & Kegiatan</a></li>
     <li><a href="{{ route('public.pengumuman') }}">Pengumuman</a></li>
     <li><a href="{{ route('public.layanan.index') }}">Layanan</a></li>
-   <li><a href="{{ route('public.kontak') }}">Contact</a></li>
+   <li><a href="{{ route('public.kontak') }}">Kontak</a></li>
      @auth
         @if(auth()->user()->role == 'user')
             <li><a href="{{ route('laporan.create') }}">Laporan</a></li>

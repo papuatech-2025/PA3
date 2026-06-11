@@ -22,7 +22,7 @@
                             <p class="lead mt-3">Media informasi, edukasi, dan layanan untuk mendukung pemberdayaan perempuan serta perlindungan anak di Kabupaten Tolikara.</p>
                             <div class="mt-4">
                                 <a href="#layanan" class="btn btn-primary btn-lg me-2">Lihat Layanan</a>
-                                <a href="#pengaduan" class="btn btn-outline-light btn-lg">Laporkan Kasus</a>
+                                <a href="{{ route('laporan.create') }}" class="btn btn-outline-light btn-lg">Laporkan Kasus</a>
                             </div>
                         </div>
                         <div class="col-lg-6 text-center" data-aos="fade-left">
@@ -41,7 +41,7 @@
                             <p class="lead mt-3">Wujudkan Kabupaten Tolikara yang ramah perempuan dan peduli anak melalui pelayanan terpadu dan responsif.</p>
                             <div class="mt-4">
                                 <a href="#profile" class="btn btn-primary btn-lg me-2">Tentang Kami</a>
-                                <a href="#pengaduan" class="btn btn-outline-light btn-lg">Laporkan Kasus</a>
+                                <a href="{{ route('laporan.create') }}" class="btn btn-outline-light btn-lg">Laporkan Kasus</a>
                             </div>
                         </div>
                         <div class="col-lg-6 text-center" data-aos="fade-left">
@@ -59,7 +59,7 @@
                             <h1 class="display-4 fw-bold">Layanan Pengaduan 24 Jam</h1>
                             <p class="lead mt-3">Butuh bantuan? Laporkan kasus kekerasan terhadap perempuan dan anak. Kami siap membantu dan mendampingi Anda.</p>
                             <div class="mt-4">
-                                <a href="#pengaduan" class="btn btn-primary btn-lg me-2">Lapor Sekarang</a>
+                                <a href="{{ route('laporan.create') }}" class="btn btn-primary btn-lg me-2">Lapor Sekarang</a>
                                 <a href="#kontak" class="btn btn-outline-light btn-lg">Hubungi Kami</a>
                             </div>
                         </div>

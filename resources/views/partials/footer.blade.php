@@ -7,9 +7,9 @@
                 <p>Sistem Informasi Dinas Pemberdayaan Perempuan dan Perlindungan Anak Kabupaten Tolikara</p>
                 
                 <div class="footer-contact mt-3">
-                    <p><i class="bi bi-geo-alt-fill me-2"></i> Jl. Raya Tolikara, Kabupaten Tolikara, Papua Pegunungan</p>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Jl.Kota Baru</p>
                     <p><i class="bi bi-telephone-fill me-2"></i> Call Center: 112</p>
-                    <p><i class="bi bi-whatsapp me-2"></i> WhatsApp: 0812-XXXX-XXXX</p>
+                    <p><i class="bi bi-whatsapp me-2"></i> WhatsApp: 081334746721</p>
                     <p><i class="bi bi-envelope-fill me-2"></i> Email: dp3a@tolikarakab.go.id</p>
                 </div>
             </div>
@@ -18,13 +18,13 @@
             <div class="col-lg-4 footer-links">
                 <h4>Menu</h4>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="/" class="text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Beranda</a></li>
-                    <li class="mb-2"><a href="#profile" class="text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Profil</a></li>
-                    <li class="mb-2"><a href="#layanan" class="text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Program  & Kegiatan</a></li>
-                    <li class="mb-2"><a href="#tim" class="text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Pengumuman</a></li>
-                    <li class="mb-2"><a href="#pengaduan" class="text-decoration-none"><i class="bi bi-chevron-right me-1"></i> Contact</a></li>
-                </ul>
-            </div>
+                    <li class="mb-2"><a href="{{ route('branda') }}" class="text-decoration-none">Home</li>
+                       <li><a href="{{ route('program.index') }}">Program & Kegiatan</a></li>
+                        <li><a href="{{ route('public.pengumuman') }}">Pengumuman</a></li>
+                        <li><a href="{{ route('public.layanan.index') }}">Layanan</a></li>
+                    <li><a href="{{ route('public.kontak') }}">Contact</a></li>
+                                    </ul>
+                                </div>
 
             <!-- Social Media & Jam Layanan -->
             <div class="col-lg-4">
