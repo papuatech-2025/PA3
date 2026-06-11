@@ -6,15 +6,19 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\StrukturOrganisasi;
 use App\Models\Program;
-use App\Models\Layanan;  // Tambahkan ini
+use App\Models\Layanan;
+use App\Models\VisiMisi; // 1. Pastikan Model VisiMisi di-import
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        // 2. Ambil data Visi Misi (biasanya hanya satu record pertama)
+        $visimisi = VisiMisi::first(); 
+
         // Ambil semua data layanan
-        $layanan = Layanan::all();  // Tambahkan ini
+        $layanan = Layanan::all();
         
         // Ambil 3 berita terbaru yang dipublish
         $beritaTerbaru = Berita::where('status', 'publish')
@@ -33,7 +37,7 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
         
-        // Kirim semua data ke view termasuk $layanan
-        return view('branda', compact('beritaTerbaru', 'struktur', 'programTerbaru', 'layanan'));
+        // 3. Tambahkan 'visimisi' ke dalam compact
+        return view('branda', compact('beritaTerbaru', 'struktur', 'programTerbaru', 'layanan', 'visimisi'));
     }
 }

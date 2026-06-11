@@ -15,7 +15,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $beritas = Berita::orderBy('created_at', 'desc')->paginate(10);
+        // Sudah diperbarui menjadi 5 per halaman sesuai permintaan sebelumnya
+        $beritas = Berita::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.berita.index', compact('beritas'));
     }
 
@@ -46,7 +47,13 @@ class BeritaController extends Controller
             $data['gambar'] = $gambarPath;
         }
 
-        $data['penulis'] = auth()->user()->name ?? 'Admin';
+        /** 
+         * PERBAIKAN DI SINI:
+         * Menggunakan $request->user() agar Intelephense tidak error.
+         * Jika user tidak login (null), akan menggunakan default 'Admin'.
+         */
+        $user = $request->user();
+        $data['penulis'] = $user ? $user->name : 'Admin';
         $data['dibaca'] = 0;
 
         Berita::create($data);

@@ -113,30 +113,67 @@
             <h2 class="fw-bold">Visi & Misi</h2>
             <p class="text-muted">Komitmen DP3A Tolikara untuk masa depan yang lebih baik</p>
         </div>
+
+        @php
+            // Memproses data isi dari database
+            $isi = $visimisi->isi ?? '';
+            $visiContent = 'Belum ada data visi';
+            $misiContent = '';
+
+            // Mencoba memisahkan kata "Visi" dan "Misi" secara otomatis
+            if (preg_match('/visi\s*[:|]?/i', $isi)) {
+                $parts = preg_split('/misi\s*[:|]?/i', $isi, 2);
+                if (count($parts) >= 2) {
+                    $visiContent = preg_replace('/visi\s*[:|]?/i', '', $parts[0]);
+                    $misiContent = $parts[1];
+                }
+            } else {
+                $visiContent = $isi;
+            }
+        @endphp
+
         <div class="row g-4">
+            {{-- Bagian Visi --}}
             <div class="col-lg-6" data-aos="fade-right">
-                <a href="{{ route('public.visimisi') }}" class="text-decoration-none">
-                    <div class="card h-100 border-0 shadow-sm" style="cursor: pointer;">
-                        <div class="card-body p-4">
+                <a href="{{ route('public.visimisi') }}" class="text-decoration-none h-100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-dark">
                             <i class="bi bi-eye fs-1 text-primary"></i>
                             <h3 class="mt-3">Visi</h3>
-                            <p class="lead">Terwujudnya Perempuan dan Anak Kabupaten Tolikara yang Berkualitas, Berdaya Saing, dan Terlindungi</p>
+                            <p class="lead" style="font-size: 1.1rem; text-align: justify;">
+                                {{ trim(strip_tags($visiContent)) }}
+                            </p>
                         </div>
                     </div>
                 </a>
             </div>
+
+            {{-- Bagian Misi --}}
             <div class="col-lg-6" data-aos="fade-left">
-                <a href="{{ route('public.visimisi') }}" class="text-decoration-none">
-                    <div class="card h-100 border-0 shadow-sm" style="cursor: pointer;">
-                        <div class="card-body p-4">
+                <a href="{{ route('public.visimisi') }}" class="text-decoration-none h-100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-dark">
                             <i class="bi bi-bullseye fs-1 text-primary"></i>
                             <h3 class="mt-3">Misi</h3>
-                            <ul class="list-unstyled">
-                                <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i> Meningkatkan kualitas hidup perempuan melalui pemberdayaan ekonomi dan sosial</li>
-                                <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i> Melindungi hak-hak anak melalui pencegahan kekerasan dan eksploitasi</li>
-                                <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i> Mewujudkan sistem perlindungan yang terintegrasi dan responsif gender</li>
-                                <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i> Meningkatkan kapasitas kelembagaan dalam pelayanan publik</li>
-                            </ul>
+                            
+                            @if($misiContent)
+                                @php
+                                    // Memecah teks misi per baris untuk dijadikan list icon
+                                    $misiLines = explode("\n", trim(strip_tags($misiContent)));
+                                @endphp
+                                <ul class="list-unstyled">
+                                    @foreach($misiLines as $line)
+                                        @if(trim($line) != '')
+                                            <li class="mb-2">
+                                                <i class="bi bi-arrow-right-circle text-primary me-2"></i>
+                                                {{ trim($line) }}
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            @else
+                                <p class="text-muted small">Klik untuk melihat detail misi</p>
+                            @endif
                         </div>
                     </div>
                 </a>

@@ -10,7 +10,7 @@
 
 <a href="/" class="logo d-flex align-items-center">
 <img src="{{ asset('assets/img/logo.png') }}" alt="">
-<h1 class="sitename">SIDPPDA</h1>
+<h1 class="sitename"> DP3A</h1>
 </a>
 
 <nav id="navmenu" class="navmenu">
