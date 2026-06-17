@@ -21,29 +21,43 @@ class AdminAuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        // 1. Validasi Input
+        $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        if (Auth::guard('web')->attempt($credentials, $request->has('remember'))) {
+        // 2. Cari User berdasarkan Email
+        $user = User::where('email', $request->email)->first();
 
-            $user = Auth::user();
+        // 3. Cek apakah Email terdaftar
+        if (!$user) {
+            return back()->withErrors([
+                'email' => 'Email tidak terdaftar dalam sistem kami.'
+            ])->withInput($request->only('email'));
+        }
 
-            // Hanya admin yang boleh login ke halaman admin
-            if ($user->role !== 'admin') {
-                Auth::logout();
-                return back()->with('error', 'Akses ditolak! Ini halaman khusus Admin.');
-            }
+        // 4. Cek apakah User tersebut adalah Admin
+        if ($user->role !== 'admin') {
+            return back()->withErrors([
+                'email' => 'Akses ditolak! Akun ini bukan merupakan Admin.'
+            ])->withInput($request->only('email'));
+        }
 
+        // 5. Cek apakah Password benar
+        if (!Hash::check($request->password, $user->password)) {
+            return back()->withErrors([
+                'password' => 'Password yang Anda masukkan salah.'
+            ])->withInput($request->only('email'));
+        }
+
+        // 6. Jika semua lolos, lakukan Login
+        if (Auth::attempt($request->only('email', 'password'), $request->has('remember'))) {
             $request->session()->regenerate();
-
             return redirect()->intended(route('admin.dashboard'));
         }
 
-        return back()->withErrors([
-            'email' => 'Email atau password salah.'
-        ])->onlyInput('email');
+        return back()->withErrors(['email' => 'Terjadi kesalahan sistem.'])->withInput();
     }
 
     public function showRegister()
@@ -78,10 +92,8 @@ class AdminAuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
         return redirect()->route('branda');
     }
 }
