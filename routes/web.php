@@ -173,9 +173,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('layanan/bulk-delete', [LayananController::class, 'bulkDelete'])->name('layanan.bulk-delete');
     Route::get('layanan/export/json', [LayananController::class, 'export'])->name('layanan.export');
 
-    // ========== CRUD WISATA ==========
-    Route::resource('wisata', AdminWisataController::class); // Manage wisata (index, create, store, edit, update, destroy)
-
+   
     // ========== CRUD PROGRAM ==========
     Route::resource('program', AdminProgramController::class); // Manage program (index, create, store, edit, update, destroy)
 
@@ -191,6 +189,12 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('masyarakat/export/pdf', [MasyarakatController::class, 'exportPdf'])->name('masyarakat.export.pdf');        // Export data ke PDF
     Route::get('masyarakat/export/excel', [MasyarakatController::class, 'exportExcel'])->name('masyarakat.export.excel');  // Export data ke Excel
     Route::patch('/masyarakat/{id}/restore',[MasyarakatController::class, 'restoreFromArchive'])->name('masyarakat.restoreFromArchive');
+      // Tambahkan rute untuk Archive dan Restore di sini
+    Route::patch('masyarakat/{id}/move-to-archive', [MasyarakatController::class, 'moveToArchive'])
+        ->name('masyarakat.moveToArchive');
+        
+    Route::patch('masyarakat/{id}/restore-from-archive', [MasyarakatController::class, 'restoreFromArchive'])
+        ->name('masyarakat.restoreFromArchive');
 
     // ========== CRUD BERITA ==========
     Route::resource('berita', AdminBeritaController::class); // Manage berita (index, create, store, edit, update, destroy)

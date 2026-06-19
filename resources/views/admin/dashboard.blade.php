@@ -126,22 +126,12 @@
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6">
-                            <a href="{{ route('admin.program.index') }}" class="quick-action-link">
+                            <a href="{{ route('admin.pengumuman.index') }}" class="quick-action-link">
                                 <div class="quick-action-card">
-                                    <div class="quick-action-icon bg-soft-pink-blue">
+                                       <div class="quick-action-icon bg-soft-pink-blue">
                                         <i class="bi bi-megaphone"></i>
                                     </div>
-                                    <span>Kelola Program</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-6">
-                            <a href="{{ route('admin.masyarakat.reports') }}" class="quick-action-link">
-                                <div class="quick-action-card">
-                                    <div class="quick-action-icon bg-soft-green">
-                                        <i class="bi bi-graph-up"></i>
-                                    </div>
-                                    <span>Statistik</span>
+                                    <span>Pengumuman</span>
                                 </div>
                             </a>
                         </div>

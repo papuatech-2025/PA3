@@ -445,7 +445,7 @@
                     </div>
                 </li>
 
-                <!-- Peserta KB -->
+                <!-- Peserta KB 
                 <li class="nav-item mb-1">
                     <a class="nav-link" data-bs-toggle="collapse" href="#menuKB" role="button">
                         <i class="bi bi-person-fill"></i><span>Peserta KB</span>
@@ -459,7 +459,7 @@
                             <li><a href="#" class="nav-link small py-1"><i class="bi bi-file-pdf"></i> Laporan KB</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
                   <!-- Program & Kegiatan -->
                 <li class="nav-item mb-1">
@@ -525,7 +525,7 @@
                 </li>
                 <li class="nav-item my-2"><hr style="border-color:rgba(255,255,255,0.08);margin:0;"></li>
 
-                <!-- Master Data -->
+                <!-- Master Data
                 <li class="nav-item mb-1">
                     <a class="nav-link" data-bs-toggle="collapse" href="#menuMaster" role="button">
                         <i class="bi bi-database"></i><span>Master Data</span>
@@ -538,7 +538,7 @@
                             <li><a href="#" class="nav-link small py-1"><i class="bi bi-person-badge"></i> Tenaga Pendamping</a></li>
                         </ul>
                     </div>
-                </li>
+                </li>-->
 
                 <!-- BERITA, STRUKTUR ORGANISASI & ABOUT (KELOLA KONTEN) -->
                <!-- BERITA, STRUKTUR ORGANISASI, ABOUT & VISI MISI (KELOLA KONTEN) -->
